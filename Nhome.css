@@ -2,7 +2,7 @@ body{
     margin: 0;
     padding: 0;
     background-color: rgb(39, 38, 38);
-    background-image: url(https://www.google.com/url?sa=i&url=https%3A%2F%2Frobogarden.ca%2Fblog%2Fleverage-of-coding&psig=AOvVaw13sGi2fKEX_Qx_ldfIxid7&ust=1580843535136000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOiijJ-LtucCFQAAAAAdAAAAABAJ); 
+    background-image: background.png; 
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
