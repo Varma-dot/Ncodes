@@ -1,0 +1,194 @@
+<html>
+    <title>
+        My Codes
+    </title>
+    <body>
+        <link rel="stylesheet" type " text / css " href="ai.css"> 
+        <header class="head">AI Algorithms</header>
+     <div class="menu" >
+         <ol>
+           <li>
+        <a > 
+                    <button class="buf">
+               
+                  Depth first search
+                
+                    </button>
+                </a>
+
+            </li>
+<li>
+                    <a href="">
+                <button class="bu">Topic 2 </button> </a></li>
+               <li> <a href="" >
+                <button class="bu">TOpic 3 </button> </a > </li>
+                    
+               <li> <a href="" ><button class="bu">Topic 4</button></a></li>
+     </ol>           
+     </div>
+     
+
+        <ul><a href="">
+            <li>C Programing</li>
+            </a>
+            <a>
+            <li>AI</li>
+            </a>
+            <a>
+            <li>Algorithms</li>
+            </a>
+            <a>
+            <li>Java</li>
+            </a>
+        </ul>
+  <pre>
+        #include"stdio.h"
+        #include"stdlib.h"
+        struct node{
+         int data;
+         struct node* left;
+         struct node* right;
+        };
+        struct node* root = NULL;
+        
+        
+        void insert();
+        void dfs();
+        int main()
+        {
+         
+        int size=0;
+         int choice;
+         while(1)
+         {
+         
+         printf("\nEnter 1-> to insert the data\n");
+         printf("Enter 2->to display\n");
+         printf("Enter 3 - > to exit");
+         printf("Enter your choice\n");
+         scanf("%d",&choice);
+         switch(choice)
+         {
+          case 1 :  insert();
+          break;
+          case 2 : dfs();
+          break;
+          case 3 : exit(0);
+          break;
+         }
+         
+        }
+        }
+        
+        void insert()
+        {
+        
+        
+         struct node* temp;
+         temp = (struct node*)malloc(sizeof(struct node));
+         printf("Enter data");
+         scanf("%d",&temp->data);
+         temp->left = NULL;
+         temp->right = NULL;
+         if(root==NULL)
+         {
+          root = temp;
+         }
+         else
+         {
+          struct node* p = root;
+          struct node* q = NULL;
+          while(p!=NULL)
+          {
+           q = p;
+           if(temp->data>p->data)
+           {
+            p=p->right;
+           }
+           else
+           {
+            p = p->left;
+           }
+          }
+          if(temp->data>q->data)
+          {
+           q->right = temp;
+           
+           
+          }
+          else
+          {
+           q->left = temp;
+          }
+         }
+        
+        }
+        
+        void dfs()
+        {
+         struct node* store;
+         struct node* q[100];
+            int c= 0;
+         int s[100];
+         int i,r=-1;
+         q[c] = root;
+         if(q[c]==NULL)
+         {
+          printf("Nothing to display");
+         }
+         else
+           {
+            
+             while(1)
+             {
+           
+              if(q[c]->left!=NULL && q[c]->right!=NULL)
+              {
+               
+               s[++r] = q[c]->data;
+               store = q[c];
+               
+               q[c] =store->right;
+               
+               q[++c]=store->left;
+           }
+           else if(q[c]->left!=NULL && q[c]->right==NULL)
+              {
+                 s[++r] = q[c]->data;
+               q[c] = q[c]->left;
+               
+               
+           }
+          else if(q[c]->left==NULL && q[c]->right!=NULL)
+              {
+                s[++r] = q[c]->data;
+               q[c] = q[c]->right;
+               
+           }
+           else if(q[c]->left==NULL && q[c]->right==NULL)
+              {
+                 s[++r] = q[c]->data;
+               
+               c--;
+               if(c==-1) break;
+           }
+          
+          
+          }
+         
+         
+           }
+           for(i=0;i<=r;i++)
+           {
+            printf("%d\t",s[i]);
+           }
+             
+         
+         
+        }
+  </pre>
+
+     
+        
+    </body>
+</html>
