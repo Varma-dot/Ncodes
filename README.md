@@ -1,8 +1,11 @@
 
 <html>
-<title>
-  Mycodes
-  </title>
+<head>
+    <title>
+        My Codes
+    </title>
+        <link rel="icon" href="Logo.jpg">
+        </head>
   <body>
     <a href="Nhome.html"> Click here </a>
     <marquee> Underconstruction </marquee>
