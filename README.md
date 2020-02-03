@@ -8,9 +8,10 @@
         </head>
   <body>
       <link rel = "stylesheet" type="text/css" href="ai.css"/>
-    <pre> 
+    
     <a href="Nhome.html"> Click here </a>
-    <marquee> Underconstruction </marquee>
-    </pre>
+    <pre>
+    <marquee> Underconstruction will be updated soon!!!</marquee>
+   </pre>
     </body>
   </html>
