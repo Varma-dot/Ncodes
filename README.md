@@ -4,6 +4,6 @@
   Mycodes
   </title>
   <body>
-    <a href="http://nrnvcoding.blogspot.com"> Click here </a>
+    <a href="Nhome.html"> Click here </a>
     </body>
   </html>
