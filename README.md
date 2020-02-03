@@ -7,7 +7,7 @@
         <link rel="icon" href="Logo.jpg">
         </head>
   <body>
-      <link rel = "stylesheet" type="text/css" href="ai.html"/>
+      <link rel = "stylesheet" type="text/css" href="ai.css"/>
       <div class="loader-wrapper">
           <span class = "loader"><span class="load-inner"></span></span>
           </div>
