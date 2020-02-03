@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+
 <html>
 <title>
   Mycodes
   </title>
   <body>
-    <a href="Nhome.html"> Click here </a>
+    <a href="http://nrnvcoding.blogspot.com"> Click here </a>
     </body>
   </html>
