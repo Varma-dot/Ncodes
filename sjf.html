@@ -1,0 +1,285 @@
+<html>
+    <head>
+    <title>
+        My Codes
+    </title>
+        <link rel="icon" href="Logo.jpg">
+        </head>
+    <body>
+        <link rel="stylesheet" type " text / css " href="ai.css"> 
+        <header class="head">Operating System</header>
+     <div class="menu" >
+         <ol>
+           <li>
+        <a href="os.html"> 
+                    <button class="bu">
+               
+                FCFS
+                
+                    </button>
+                </a>
+
+            </li>
+<li>
+                    <a >
+                <button class="buf">SJF </button> </a></li>
+               <li> <a href="" >
+                <button class="bu">SRTF </button> </a > </li>
+                    
+               <li> <a href="" ><button class="bu">Topic 4</button></a></li>
+     </ol>           
+     </div>
+     
+
+        <ul><a href="c.html">
+            <li>C Programing</li>
+            </a>
+            <a href="ai.html">
+            <li>AI</li>
+            </a>
+            <a href="al.html">
+            <li>Algorithms</li>
+            </a>
+            <a href="java.html">
+            <li>Java</li>
+            </a>
+        </ul>
+  <pre>
+        #include&lt;stdio.h&gt;
+        void ganntchart(int p[],int arr2[],int n,int arr[]);
+
+void displaytable(int arr[],int arr1[],int arr2[],int arr3[],int arr4[],int p[],int n);
+main()
+{
+
+ int n,arr[15],arr1[15],arr2[15]={0},arr3[15],arr4[15],s=0,j1;
+int p[15],k=0,sum=0;
+float wt=0,tat=0;
+int i,j,swap,swap1,swap2;
+printf("Enter how many processers are there ");
+scanf("%d",&n);
+for(i=0;i< n;i++)
+{
+  p[i] = i+1;
+printf("Enter p%d arival time",i+1);
+scanf("%d",&arr[i]);
+
+printf("Enter p%d burst time",i+1);
+scanf("%d",&arr1[i]);
+
+}
+
+for(i=0;i< n;i++)
+{
+for(j=0;j< n-i-1;j++)
+{
+if(arr[j] >arr[j+1])
+{
+swap = arr[j];
+arr[j] = arr[j+1];
+arr[j+1] = swap;
+
+swap1 = arr1[j];
+arr1[j] = arr1[j+1];
+arr1[j+1] = swap1;
+
+swap2 = p[j];
+p[j]= p[j+1];
+p[j+1] = swap2;
+
+}
+
+}
+}
+
+
+for(i=0;i< n;i++)
+{
+
+
+ if( i==0)
+ {
+   s = arr1[i]+arr[i];
+         arr2[i] = s;
+   continue;
+ }
+
+
+
+
+
+  for(j1=i;j1< n;j1++)
+  {
+ 
+ 
+  for(j=i;j< n-1;j++)
+  {
+ 
+ 
+ 
+  if(arr1[j] >arr1[j+1] && arr[j+1]< =s)
+  {
+ 
+
+ swap = arr[j];
+arr[j] = arr[j+1];
+arr[j+1] = swap;
+
+swap1 = arr1[j];
+arr1[j] = arr1[j+1];
+arr1[j+1] = swap1;
+
+swap2 = p[j];
+p[j]= p[j+1];
+p[j+1] = swap2;
+ 
+ 
+  }
+ 
+ }
+
+}
+ s = s+arr1[i];
+ arr2[i] = s;
+
+
+}
+
+//tat and wt
+for(i=0;i< n;i++)
+{
+arr3[i] = arr2[i] - arr[i];
+arr4[i] =  arr3[i] - arr1[i];
+}
+for(i=0;i< n;i++)
+{
+tat = tat+arr3[i];
+wt = wt+arr4[i];
+}
+tat = tat/n;
+wt = wt/n;
+displaytable(arr,arr1,arr2,arr3,arr4,p,n);
+
+ganntchart(p,arr2,n,arr);
+
+printf("\n\nAverage turn around time is : %f \nAverage waiting time is :%f",tat,wt);
+
+}
+
+//    Display table
+
+
+void displaytable(int arr[],int arr1[],int arr2[],int arr3[],int arr4[],int p[],int n)
+{
+ int i;
+printf("\n                         printing table");
+printf("\n                         --------------\n\n");
+
+printf("p  |  Arival time  |  Burst time  |  complete time  |    TAT  |   WT  |\n");
+
+ for(i=0;i< n;i++)
+    {
+     printf("p%2d      %2d             %2d               %2d              %2d       %2d  \n",p[i],arr[i],arr1[i],arr2[i],arr3[i],arr4[i]);
+ }
+
+
+}
+
+
+
+// Gannt chart
+void ganntchart(int p[],int arr2[],int n,int arr[])
+{
+int i,j,k=1;
+printf("\n                         Gannt chart");
+printf("\n                         ----------- \n");
+printf("\n");
+
+for(i=0;i< n;i++)
+{
+ printf(" ");
+ for(j=0;j< k;j++)
+ {
+
+
+  printf("--");
+
+ }
+
+ k++;
+
+}
+printf("\n");
+
+for(i=0;i< n;i++)
+{
+ printf("|p%d",p[i]);
+ k= i*2;
+ for(j=0;j< k;j++)
+ {
+  printf(" ");
+ 
+ }
+}
+
+
+
+printf("|\n");
+k=1;
+
+for(i=0;i< n;i++)
+{
+ printf(" ");
+ for(j=0;j< k;j++)
+ {
+
+
+  printf("--");
+
+ }
+
+ k++;
+
+}
+printf("\n");
+printf("%d",arr[0]);
+k=1;
+int m=0;
+for(i=0;i< n;i++)
+{
+  for(j=0;j< k;j++)
+ {
+  printf("  ");
+ }
+
+ k++;
+ if(arr2[i] >=10)
+ {
+  if(m==0)
+  {
+   printf("%d",arr2[i]);
+ 
+  }
+  else
+  {
+   printf("\b");
+   printf("%d",arr2[i]);
+  }
+  m++;
+ }
+ else
+ {
+  printf("%d",arr2[i]);
+ }
+
+}
+
+}
+
+
+  </pre>
+
+     
+        
+    </body>
+</html>
