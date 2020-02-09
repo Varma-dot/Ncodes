@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>
-        My Codes
+        My self vishal
     </title>
         <link rel="icon" href="Logo.jpg">
         </head>
