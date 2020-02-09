@@ -11,7 +11,7 @@
     
     <a href="www.goggle.com"> Click here </a>
     
-    <marquee> webpage is in Underconstruction will be updated soon!!!</marquee>
+
    
     </body>
   </html>
