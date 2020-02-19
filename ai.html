@@ -44,152 +44,155 @@
             <li>Java</li>
             </a>
         </ul>
-  <pre>
-        #include"stdio.h"
-        #include"stdlib.h"
-        struct node{
-         int data;
-         struct node* left;
-         struct node* right;
-        };
-        struct node* root = NULL;
-        
-        
-        void insert();
-        void dfs();
-        int main()
-        {
-         
-        int size=0;
-         int choice;
-         while(1)
-         {
-         
-         printf("\nEnter 1-> to insert the data\n");
-         printf("Enter 2->to display\n");
-         printf("Enter 3 - > to exit");
-         printf("Enter your choice\n");
-         scanf("%d",&choice);
-         switch(choice)
-         {
-          case 1 :  insert();
-          break;
-          case 2 : dfs();
-          break;
-          case 3 : exit(0);
-          break;
-         }
-         
-        }
-        }
-        
-        void insert()
-        {
-        
-        
-         struct node* temp;
-         temp = (struct node*)malloc(sizeof(struct node));
-         printf("Enter data");
-         scanf("%d",&temp->data);
-         temp->left = NULL;
-         temp->right = NULL;
-         if(root==NULL)
-         {
-          root = temp;
-         }
-         else
-         {
-          struct node* p = root;
-          struct node* q = NULL;
-          while(p!=NULL)
-          {
-           q = p;
-           if(temp->data>p->data)
-           {
-            p=p->right;
-           }
-           else
-           {
-            p = p->left;
-           }
-          }
-          if(temp->data>q->data)
-          {
-           q->right = temp;
-           
-           
-          }
-          else
-          {
-           q->left = temp;
-          }
-         }
-        
-        }
-        
-        void dfs()
-        {
-         struct node* store;
-         struct node* q[100];
-            int c= 0;
-         int s[100];
-         int i,r=-1;
-         q[c] = root;
-         if(q[c]==NULL)
-         {
-          printf("Nothing to display");
-         }
-         else
-           {
-            
-             while(1)
-             {
-           
-              if(q[c]->left!=NULL && q[c]->right!=NULL)
-              {
-               
-               s[++r] = q[c]->data;
-               store = q[c];
-               
-               q[c] =store->right;
-               
-               q[++c]=store->left;
-           }
-           else if(q[c]->left!=NULL && q[c]->right==NULL)
-              {
-                 s[++r] = q[c]->data;
-               q[c] = q[c]->left;
-               
-               
-           }
-          else if(q[c]->left==NULL && q[c]->right!=NULL)
-              {
-                s[++r] = q[c]->data;
-               q[c] = q[c]->right;
-               
-           }
-           else if(q[c]->left==NULL && q[c]->right==NULL)
-              {
-                 s[++r] = q[c]->data;
-               
-               c--;
-               if(c==-1) break;
-           }
-          
-          
-          }
-         
-         
-           }
-           for(i=0;i<=r;i++)
-           {
-            printf("%d\t",s[i]);
-           }
-             
-         
-         
-        }
-  </pre>
+  <div dir="ltr" style="text-align: left;" trbidi="on">
+#include&lt;stdio.h&gt;<br />
+#include&lt;stdlib.h&gt;<br />
+struct node{<br />
+<span style="white-space: pre;"> </span>int data;<br />
+<span style="white-space: pre;"> </span>struct node* left;<br />
+<span style="white-space: pre;"> </span>struct node* right;<br />
+};<br />
+struct node* root = NULL;<br />
+<br />
+<br />
+void insert();<br />
+void dfs();<br />
+int main()<br />
+{<br />
+<span style="white-space: pre;"> </span><br />
+int size=0;<br />
+<span style="white-space: pre;"> </span>int choice;<br />
+<span style="white-space: pre;"> </span>while(1)<br />
+<span style="white-space: pre;"> </span>{<br />
+<span style="white-space: pre;"> </span><br />
+<span style="white-space: pre;"> </span>printf("\nEnter 1-&gt; to insert the data\n");<br />
+<span style="white-space: pre;"> </span>printf("Enter 2-&gt;to display\n");<br />
+<span style="white-space: pre;"> </span>printf("Enter 3 - &gt; to exit");<br />
+<span style="white-space: pre;"> </span>printf("Enter your choice\n");<br />
+<span style="white-space: pre;"> </span>scanf("%d",&amp;choice);<br />
+<span style="white-space: pre;"> </span>switch(choice)<br />
+<span style="white-space: pre;"> </span>{<br />
+<span style="white-space: pre;">  </span>case 1 :&nbsp; insert();<br />
+<span style="white-space: pre;">  </span>break;<br />
+<span style="white-space: pre;">  </span>case 2 : dfs();<br />
+<span style="white-space: pre;">  </span>break;<br />
+<span style="white-space: pre;">  </span>case 3 : exit(0);<br />
+<span style="white-space: pre;">  </span>break;<br />
+<span style="white-space: pre;"> </span>}<br />
+<span style="white-space: pre;"> </span><br />
+}<br />
+}<br />
+<br />
+void insert()<br />
+{<br />
+<br />
+<br />
+<span style="white-space: pre;"> </span>struct node* temp;<br />
+<span style="white-space: pre;"> </span>temp = (struct node*)malloc(sizeof(struct node));<br />
+<span style="white-space: pre;"> </span>printf("Enter data");<br />
+<span style="white-space: pre;"> </span>scanf("%d",&amp;temp-&gt;data);<br />
+<span style="white-space: pre;"> </span>temp-&gt;left = NULL;<br />
+<span style="white-space: pre;"> </span>temp-&gt;right = NULL;<br />
+<span style="white-space: pre;"> </span>if(root==NULL)<br />
+<span style="white-space: pre;"> </span>{<br />
+<span style="white-space: pre;">  </span>root = temp;<br />
+<span style="white-space: pre;"> </span>}<br />
+<span style="white-space: pre;"> </span>else<br />
+<span style="white-space: pre;"> </span>{<br />
+<span style="white-space: pre;">  </span>struct node* p = root;<br />
+<span style="white-space: pre;">  </span>struct node* q = NULL;<br />
+<span style="white-space: pre;">  </span>while(p!=NULL)<br />
+<span style="white-space: pre;">  </span>{<br />
+<span style="white-space: pre;">   </span>q = p;<br />
+<span style="white-space: pre;">   </span>if(temp-&gt;data&gt;p-&gt;data)<br />
+<span style="white-space: pre;">   </span>{<br />
+<span style="white-space: pre;">    </span>p=p-&gt;right;<br />
+<span style="white-space: pre;">   </span>}<br />
+<span style="white-space: pre;">   </span>else<br />
+<span style="white-space: pre;">   </span>{<br />
+<span style="white-space: pre;">    </span>p = p-&gt;left;<br />
+<span style="white-space: pre;">   </span>}<br />
+<span style="white-space: pre;">  </span>}<br />
+<span style="white-space: pre;">  </span>if(temp-&gt;data&gt;q-&gt;data)<br />
+<span style="white-space: pre;">  </span>{<br />
+<span style="white-space: pre;">   </span>q-&gt;right = temp;<br />
+<span style="white-space: pre;">   </span><br />
+<span style="white-space: pre;">   </span><br />
+<span style="white-space: pre;">  </span>}<br />
+<span style="white-space: pre;">  </span>else<br />
+<span style="white-space: pre;">  </span>{<br />
+<span style="white-space: pre;">   </span>q-&gt;left = temp;<br />
+<span style="white-space: pre;">  </span>}<br />
+<span style="white-space: pre;"> </span>}<br />
+<br />
+}<br />
+<br />
+void dfs()<br />
+{<br />
+<span style="white-space: pre;"> </span>struct node* store;<br />
+<span style="white-space: pre;"> </span>struct node* q[100];<br />
+&nbsp; &nbsp; int c= 0;<br />
+<span style="white-space: pre;"> </span>int s[100];<br />
+<span style="white-space: pre;"> </span>int i,r=-1;<br />
+<span style="white-space: pre;"> </span>q[c] = root;<br />
+<span style="white-space: pre;"> </span>if(q[c]==NULL)<br />
+<span style="white-space: pre;"> </span>{<br />
+<span style="white-space: pre;">  </span>printf("Nothing to display");<br />
+<span style="white-space: pre;"> </span>}<br />
+<span style="white-space: pre;"> </span>else<br />
+&nbsp; &nbsp;{<br />
+&nbsp; &nbsp;<span style="white-space: pre;"> </span><br />
+&nbsp; &nbsp; &nbsp;while(1)<br />
+&nbsp; &nbsp; &nbsp;{<br />
+&nbsp; &nbsp; <br />
+&nbsp; &nbsp; &nbsp;<span style="white-space: pre;"> </span>if(q[c]-&gt;left!=NULL &amp;&amp; q[c]-&gt;right!=NULL)<br />
+&nbsp; &nbsp; &nbsp;<span style="white-space: pre;"> </span>{<br />
+&nbsp; &nbsp; &nbsp;<span style="white-space: pre;">  </span><br />
+&nbsp; &nbsp; &nbsp;<span style="white-space: pre;">  </span>s[++r] = q[c]-&gt;data;<br />
+&nbsp; &nbsp; &nbsp;<span style="white-space: pre;">  </span>store = q[c];<br />
+&nbsp; &nbsp; &nbsp;<span style="white-space: pre;">  </span><br />
+&nbsp; &nbsp; &nbsp;<span style="white-space: pre;">  </span>q[c] =store-&gt;right;<br />
+&nbsp; &nbsp; &nbsp;<span style="white-space: pre;">  </span><br />
+&nbsp; &nbsp; &nbsp;<span style="white-space: pre;">  </span>q[++c]=store-&gt;left;<br />
+<span style="white-space: pre;">  </span> }<br />
+<span style="white-space: pre;">  </span> else if(q[c]-&gt;left!=NULL &amp;&amp; q[c]-&gt;right==NULL)<br />
+&nbsp; &nbsp; &nbsp;<span style="white-space: pre;"> </span>{<br />
+&nbsp; &nbsp; &nbsp;<span style="white-space: pre;">    </span>s[++r] = q[c]-&gt;data;<br />
+&nbsp; &nbsp; &nbsp;<span style="white-space: pre;">  </span>q[c] = q[c]-&gt;left;<br />
+&nbsp; &nbsp; &nbsp;<span style="white-space: pre;">  </span><br />
+&nbsp; &nbsp; &nbsp;<span style="white-space: pre;">  </span><br />
+<span style="white-space: pre;">  </span> }<br />
+<span style="white-space: pre;">  </span>else if(q[c]-&gt;left==NULL &amp;&amp; q[c]-&gt;right!=NULL)<br />
+&nbsp; &nbsp; &nbsp;<span style="white-space: pre;"> </span>{<br />
+&nbsp; &nbsp; &nbsp;<span style="white-space: pre;">   </span>s[++r] = q[c]-&gt;data;<br />
+&nbsp; &nbsp; &nbsp;<span style="white-space: pre;">  </span>q[c] = q[c]-&gt;right;<br />
+&nbsp; &nbsp; &nbsp;<span style="white-space: pre;">  </span><br />
+<span style="white-space: pre;">  </span> }<br />
+<span style="white-space: pre;">  </span> else if(q[c]-&gt;left==NULL &amp;&amp; q[c]-&gt;right==NULL)<br />
+&nbsp; &nbsp; &nbsp;<span style="white-space: pre;"> </span>{<br />
+&nbsp; &nbsp; &nbsp;<span style="white-space: pre;">    </span>s[++r] = q[c]-&gt;data;<br />
+&nbsp; &nbsp; &nbsp;<span style="white-space: pre;">  </span><br />
+&nbsp; &nbsp; &nbsp;<span style="white-space: pre;">  </span>c--;<br />
+&nbsp; &nbsp; &nbsp;<span style="white-space: pre;">  </span>if(c==-1) break;<br />
+<span style="white-space: pre;">  </span> }<br />
+<span style="white-space: pre;">  </span><br />
+<span style="white-space: pre;">  </span><br />
+<span style="white-space: pre;"> </span> }<br />
+<span style="white-space: pre;"> </span><br />
+&nbsp; <br />
+&nbsp; &nbsp;}<br />
+&nbsp; &nbsp;for(i=0;i&lt;=r;i++)<br />
+&nbsp; &nbsp;{<br />
+&nbsp; &nbsp;<span style="white-space: pre;"> </span>printf("%d\t",s[i]);<br />
+&nbsp; &nbsp;}<br />
+<span style="white-space: pre;"> </span>&nbsp; &nbsp;<span style="white-space: pre;"> </span><br />
+<span style="white-space: pre;"> </span><br />
+<span style="white-space: pre;"> </span><br />
+}<br />
+<div>
+<br /></div>
+</div>
+
 
      
         
