@@ -26,10 +26,10 @@ body{
     max-width: 500px;
     height: 80px;
     width: 250px;
-    background-color:  rgb(224, 57, 23);
-    border: 2px;
+    
+    border: 0px;
 border-radius: 15px 50px;
-color: redsmoke; 
+color: whitesmoke; 
 font-size: 25px;
 }
 .menu{
