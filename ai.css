@@ -10,7 +10,8 @@ body{
     margin: auto;   
 }
 .head{
-    padding: 25px;
+    position:absolute;
+    padding: 100px;
     image-align: center;
     background: rgb(44, 88, 90);
    
@@ -18,11 +19,10 @@ body{
      top: 500px;
     left: 500px;
     max-width: 500px;
-    height: 80px;
-    width: 250px;
+ 
     
     border: 0px;
-border-radius: 15px 50px;
+border-radius: 15px 15px;
 color: whitesmoke; 
 font-size: 25px;>
     
