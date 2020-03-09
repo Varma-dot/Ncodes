@@ -11,13 +11,24 @@ body{
 }
 .head{
     padding: 25px;
-    text-align: center;
+    image-align: center;
     background: rgb(44, 88, 90);
-    color: white;
+   
     font-size: 50px;
+     top: 500px;
+    left: 500px;
+    max-width: 500px;
+    height: 80px;
+    width: 250px;
+    
+    border: 0px;
+border-radius: 15px 50px;
+color: whitesmoke; 
+font-size: 25px;>
     
 
 }
+
 .logodesign
 {
    position: absolute;
